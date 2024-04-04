@@ -1,0 +1,579 @@
+<div id="interestCalculation" class="page-layout carded fullwidth inner-scroll">
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg accent"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- CENTER -->
+    <div class="center">
+        <!-- HEADER -->
+        <div
+            class="header accent"
+            fxLayout="column"
+            fxLayoutAlign="center center"
+            fxLayout.gt-sm="row"
+            fxLayoutAlign.gt-sm="space-between center"
+        >
+            <!-- APP TITLE -->
+            <div
+                class="logo mb-24 mb-md-0"
+                fxLayout="row"
+                fxLayoutAlign="start center"
+            >
+                <mat-icon
+                    class="logo-icon s-32 mr-16"
+                    [@animate]="{
+                        value: '*',
+                        params: { delay: '50ms', scale: '0.2' }
+                    }"
+                >
+                    shopping_basket
+                </mat-icon>
+                <span
+                    class="logo-text h1"
+                    [@animate]="{
+                        value: '*',
+                        params: { delay: '100ms', x: '-25px' }
+                    }"
+                >
+                    {{ "INTERESTCALCULATION.INTERESTCALCULATION" | translate }}
+                </span>
+            </div>
+            <!-- / APP TITLE -->
+            <!-- SEARCH -->
+            <div class="search-wrapper mx-32 mx-md-0">
+                <div
+                    class="search"
+                    fxFlex
+                    fxLayout="row"
+                    fxLayoutAlign="start center"
+                >
+                    <mat-icon>search</mat-icon>
+                    <input
+                        #filter
+                        placeholder="{{
+                            'INTERESTCALCULATION.SEARCHTEXT' | translate
+                        }}"
+                    />
+                </div>
+            </div>
+            <!-- / SEARCH -->
+        </div>
+        <!-- / HEADER -->
+        <!-- CONTENT CARD -->
+        <div class="content-card">
+            <!-- CONTENT -->
+            <div class="content">
+                <form
+                    name="interestCalculationForm"
+                    [formGroup]="interestCalculationForm"
+                    class="calculation w-100-p"
+                    fxLayout="column"
+                    fxFlex
+                >
+                    <mat-tab-group>
+                        <mat-tab
+                            label="{{
+                                'INTERESTCALCULATION.INTERESTCALCULATIONINFO'
+                                    | translate
+                            }}"
+                        >
+                            <div class="tab-content p-24" fusePerfectScrollbar>
+                                <div
+                                    fxLayout="row"
+                                    fxLayoutAlign="space-between"
+                                >
+                                    <mat-form-field
+                                        appearance="outline"
+                                        floatLabel="always"
+                                        class="w-100-p"
+                                        fxFlex="48"
+                                    >
+                                        <mat-label>{{
+                                            "INTERESTCALCULATION.TNAAMOUNT"
+                                                | translate
+                                        }}</mat-label>
+                                        <input
+                                            type="number"
+                                            matInput
+                                            placeholder="{{
+                                                'INTERESTCALCULATION.TNAAMOUNT'
+                                                    | translate
+                                            }}"
+                                            name="TnaAmount"
+                                            formControlName="TnaAmount"
+                                        />
+                                    </mat-form-field>
+                                    <mat-form-field
+                                        appearance="outline"
+                                        floatLabel="always"
+                                        class="w-100-p"
+                                        fxFlex="48"
+                                    >
+                                        <mat-label>{{
+                                            "INTERESTCALCULATION.INTERESTRATE"
+                                                | translate
+                                        }}</mat-label>
+                                        <input
+                                            type="number"
+                                            matInput
+                                            placeholder="{{
+                                                'INTERESTCALCULATION.INTERESTRATE'
+                                                    | translate
+                                            }}"
+                                            name="InterestRate"
+                                            formControlName="InterestRate"
+                                        />
+                                    </mat-form-field>
+                                </div>
+                                <div
+                                    fxLayout="row"
+                                    fxLayoutAlign="space-between"
+                                >
+                                    <mat-form-field
+                                        appearance="outline"
+                                        floatLabel="always"
+                                        class="w-100-p"
+                                        fxFlex="48"
+                                    >
+                                        <mat-label>{{
+                                            "INTERESTCALCULATION.BSMVRATE"
+                                                | translate
+                                        }}</mat-label>
+                                        <input
+                                            type="number"
+                                            matInput
+                                            placeholder="{{
+                                                'INTERESTCALCULATION.BSMVRATE'
+                                                    | translate
+                                            }}"
+                                            name="BsmvRate"
+                                            formControlName="BsmvRate"
+                                        />
+                                    </mat-form-field>
+                                    <mat-form-field
+                                        appearance="outline"
+                                        floatLabel="always"
+                                        class="w-100-p"
+                                        fxFlex="48"
+                                    >
+                                        <mat-label>{{
+                                            "INTERESTCALCULATION.KKDFRATE"
+                                                | translate
+                                        }}</mat-label>
+                                        <input
+                                            type="number"
+                                            matInput
+                                            placeholder="{{
+                                                'INTERESTCALCULATION.KKDFRATE'
+                                                    | translate
+                                            }}"
+                                            name="KkdfRate"
+                                            formControlName="KkdfRate"
+                                        />
+                                    </mat-form-field>
+                                </div>
+                                <div
+                                    fxLayout="row"
+                                    fxLayoutAlign="space-between"
+                                >
+                                    <mat-form-field
+                                        appearance="outline"
+                                        floatLabel="always"
+                                        class="w-100-p"
+                                        fxFlex="48"
+                                    >
+                                        <mat-label>{{
+                                            "INTERESTCALCULATION.INSTALLCOUNT"
+                                                | translate
+                                        }}</mat-label>
+                                        <input
+                                            type="number"
+                                            matInput
+                                            placeholder="{{
+                                                'INTERESTCALCULATION.INSTALLCOUNT'
+                                                    | translate
+                                            }}"
+                                            name="InstallCount"
+                                            formControlName="InstallCount"
+                                        />
+                                    </mat-form-field>
+                                    <mat-form-field
+                                        appearance="outline"
+                                        floatLabel="always"
+                                        class="w-100-p"
+                                        fxFlex="48"
+                                    >
+                                        <mat-label>{{
+                                            "INTERESTCALCULATION.TRANSACTIONDATE"
+                                                | translate
+                                        }}</mat-label>
+
+                                        <input
+                                            matInput
+                                            name="TransactionDate"
+                                            formControlName="TransactionDate"
+                                            [matDatepicker]="
+                                                pickerTransactionDate
+                                            "
+                                            [(ngModel)]="
+                                                calculation.TransactionDate
+                                            "
+                                            (dateChange)="
+                                                onTransactionDateChange($event)
+                                            "
+                                        />
+
+                                        <mat-datepicker-toggle
+                                            matSuffix
+                                            [for]="pickerTransactionDate"
+                                        >
+                                        </mat-datepicker-toggle>
+                                        <mat-datepicker #pickerTransactionDate>
+                                        </mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div
+                                    fxLayout="row"
+                                    fxLayoutAlign="space-between"
+                                >
+                                    <mat-form-field
+                                        appearance="outline"
+                                        floatLabel="always"
+                                        class="w-100-p"
+                                        fxFlex="48"
+                                    >
+                                        <mat-label>{{
+                                            "INTERESTCALCULATION.DUEDATE"
+                                                | translate
+                                        }}</mat-label>
+
+                                        <input
+                                            matInput
+                                            name="DueDate"
+                                            formControlName="DueDate"
+                                            [matDatepicker]="pickerDueDate"
+                                            [(ngModel)]="calculation.DueDate"
+                                            (dateChange)="
+                                                onDueDateChange($event)
+                                            "
+                                        />
+
+                                        <mat-datepicker-toggle
+                                            matSuffix
+                                            [for]="pickerDueDate"
+                                        >
+                                        </mat-datepicker-toggle>
+                                        <mat-datepicker #pickerDueDate>
+                                        </mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <button
+                                    style="margin-right: 10px"
+                                    mat-raised-button
+                                    class="save-calculation-button"
+                                    (click)="ClearButton()"
+                                >
+                                    <span>{{
+                                        "INTERESTCALCULATION.CLEAR" | translate
+                                    }}</span>
+                                </button>
+                                <button
+                                    mat-raised-button
+                                    class="save-calculation-button"
+                                    (click)="CalculationButton()"
+                                >
+                                    <span>{{
+                                        "INTERESTCALCULATION.INTERESTCALCULATION2"
+                                            | translate
+                                    }}</span>
+                                </button>
+                                <div
+                                    fxLayout="row"
+                                    fxLayoutAlign="space-between"
+                                    style="margin-top: 60px"
+                                >
+                                    <mat-form-field
+                                        appearance="outline"
+                                        floatLabel="always"
+                                        class="w-100-p"
+                                        fxFlex="48"
+                                    >
+                                        <mat-label>{{
+                                            "INTERESTCALCULATION.TOTALTNAAMOUNT"
+                                                | translate
+                                        }}</mat-label>
+                                        <input
+                                            type="number"
+                                            matInput
+                                            placeholder="{{
+                                                'INTERESTCALCULATION.TOTALTNAAMOUNT'
+                                                    | translate
+                                            }}"
+                                            name="TotalTnaAmount"
+                                            formControlName="TotalTnaAmount"
+                                            [(ngModel)]="interestTotalTnaAmount"
+                                        />
+                                    </mat-form-field>
+                                    <mat-form-field
+                                        appearance="outline"
+                                        floatLabel="always"
+                                        class="w-100-p"
+                                        fxFlex="48"
+                                    >
+                                        <mat-label>{{
+                                            "INTERESTCALCULATION.TOTALINTERESTAMOUNT"
+                                                | translate
+                                        }}</mat-label>
+                                        <input
+                                            type="number"
+                                            matInput
+                                            placeholder="{{
+                                                'INTERESTCALCULATION.TOTALINTERESTAMOUNT'
+                                                    | translate
+                                            }}"
+                                            name="TotalInterestAmount"
+                                            formControlName="TotalInterestAmount"
+                                            [(ngModel)]="
+                                                interestTotalInterestAmount
+                                            "
+                                        />
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </mat-tab>
+                        <mat-tab
+                            label="{{
+                                'INTERESTCALCULATION.INSTALLMENT' | translate
+                            }}"
+                        >
+                            <mat-table
+                                class="interestCalculations-table"
+                                #table
+                                matSort
+                                [@animateStagger]="{ value: '50' }"
+                                fusePerfectScrollbar
+                                [dataSource]="interestCalculationDataSource"
+                            >
+                                <!-- InstallmentIndex Column -->
+                                <ng-container matColumnDef="InstallmentIndex">
+                                    <mat-header-cell
+                                        *matHeaderCellDef
+                                        mat-sort-header
+                                        fxHide
+                                        fxShow.gt-xs
+                                        >{{
+                                            "INTERESTCALCULATION.INSTALLMENTINDEX"
+                                                | translate
+                                        }}</mat-header-cell
+                                    >
+                                    <mat-cell
+                                        *matCellDef="let calculation"
+                                        fxHide
+                                        fxShow.gt-xs
+                                    >
+                                        <p class="text-truncate">
+                                            {{ calculation.InstallmentIndex }}
+                                        </p>
+                                    </mat-cell>
+                                </ng-container>
+
+                                <!-- InstallmentAmount Column -->
+                                <ng-container matColumnDef="InstallmentAmount">
+                                    <mat-header-cell
+                                        *matHeaderCellDef
+                                        mat-sort-header
+                                        fxHide
+                                        fxShow.gt-xs
+                                        >{{
+                                            "INTERESTCALCULATION.INSTALLMENTAMOUNT"
+                                                | translate
+                                        }}</mat-header-cell
+                                    >
+                                    <mat-cell
+                                        *matCellDef="let calculation"
+                                        fxHide
+                                        fxShow.gt-xs
+                                    >
+                                        <p class="text-truncate">
+                                            {{ calculation.InstallmentAmount }}
+                                        </p>
+                                    </mat-cell>
+                                </ng-container>
+                                <!-- CapitalAmount Column -->
+                                <ng-container matColumnDef="CapitalAmount">
+                                    <mat-header-cell
+                                        *matHeaderCellDef
+                                        mat-sort-header
+                                        fxHide
+                                        fxShow.gt-xs
+                                        >{{
+                                            "INTERESTCALCULATION.CAPITALAMOUNT"
+                                                | translate
+                                        }}</mat-header-cell
+                                    >
+                                    <mat-cell
+                                        *matCellDef="let calculation"
+                                        fxHide
+                                        fxShow.gt-xs
+                                    >
+                                        <p class="text-truncate">
+                                            {{ calculation.CapitalAmount }}
+                                        </p>
+                                    </mat-cell>
+                                </ng-container>
+                                <!-- InterestAmount Column -->
+                                <ng-container matColumnDef="InterestAmount">
+                                    <mat-header-cell
+                                        *matHeaderCellDef
+                                        mat-sort-header
+                                        fxHide
+                                        fxShow.gt-xs
+                                        >{{
+                                            "INTERESTCALCULATION.INTERESTAMOUNT"
+                                                | translate
+                                        }}</mat-header-cell
+                                    >
+                                    <mat-cell
+                                        *matCellDef="let calculation"
+                                        fxHide
+                                        fxShow.gt-xs
+                                    >
+                                        <p class="text-truncate">
+                                            {{ calculation.InterestAmount }}
+                                        </p>
+                                    </mat-cell>
+                                </ng-container>
+                                <!-- KkdfAmount Column -->
+                                <ng-container matColumnDef="KkdfAmount">
+                                    <mat-header-cell
+                                        *matHeaderCellDef
+                                        mat-sort-header
+                                        fxHide
+                                        fxShow.gt-xs
+                                        >{{
+                                            "INTERESTCALCULATION.KKDFAMOUNT"
+                                                | translate
+                                        }}</mat-header-cell
+                                    >
+                                    <mat-cell
+                                        *matCellDef="let calculation"
+                                        fxHide
+                                        fxShow.gt-xs
+                                    >
+                                        <p class="text-truncate">
+                                            {{ calculation.KkdfAmount }}
+                                        </p>
+                                    </mat-cell>
+                                </ng-container>
+                                <!-- BsmvAmount Column -->
+                                <ng-container matColumnDef="BsmvAmount">
+                                    <mat-header-cell
+                                        *matHeaderCellDef
+                                        mat-sort-header
+                                        fxHide
+                                        fxShow.gt-xs
+                                        >{{
+                                            "INTERESTCALCULATION.BSMVAMOUNT"
+                                                | translate
+                                        }}</mat-header-cell
+                                    >
+                                    <mat-cell
+                                        *matCellDef="let calculation"
+                                        fxHide
+                                        fxShow.gt-xs
+                                    >
+                                        <p class="text-truncate">
+                                            {{ calculation.BsmvAmount }}
+                                        </p>
+                                    </mat-cell>
+                                </ng-container>
+                                <!-- RemainingCapitalAmount Column -->
+                                <ng-container
+                                    matColumnDef="RemainingCapitalAmount"
+                                >
+                                    <mat-header-cell
+                                        *matHeaderCellDef
+                                        mat-sort-header
+                                        fxHide
+                                        fxShow.gt-xs
+                                        >{{
+                                            "INTERESTCALCULATION.REMAININGCAPITALAMOUNT"
+                                                | translate
+                                        }}</mat-header-cell
+                                    >
+                                    <mat-cell
+                                        *matCellDef="let calculation"
+                                        fxHide
+                                        fxShow.gt-xs
+                                    >
+                                        <p class="text-truncate">
+                                            {{
+                                                calculation.RemainingCapitalAmount
+                                            }}
+                                        </p>
+                                    </mat-cell>
+                                </ng-container>
+                                <!-- InstallmentDate Column -->
+                                <ng-container matColumnDef="InstallmentDate">
+                                    <mat-header-cell
+                                        *matHeaderCellDef
+                                        mat-sort-header
+                                        fxHide
+                                        fxShow.gt-xs
+                                        >{{
+                                            "INTERESTCALCULATION.INSTALLMENTDATE"
+                                                | translate
+                                        }}</mat-header-cell
+                                    >
+                                    <mat-cell
+                                        *matCellDef="let calculation"
+                                        fxHide
+                                        fxShow.gt-sm
+                                    >
+                                        <span class="text-truncate"
+                                            >{{
+                                                calculation.InstallmentDate
+                                                    | date
+                                                        : "dd/MM/YYYY HH:mm:ss "
+                                            }}
+                                        </span>
+                                    </mat-cell>
+                                </ng-container>
+                                <mat-header-row
+                                    *matHeaderRowDef="
+                                        displayedColumns;
+                                        sticky: true
+                                    "
+                                ></mat-header-row>
+
+                                <mat-row
+                                    *matRowDef="
+                                        let calculation;
+                                        columns: displayedColumns
+                                    "
+                                    class="calculation"
+                                >
+                                </mat-row>
+                            </mat-table>
+                        </mat-tab>
+                    </mat-tab-group>
+                    <mat-paginator
+                        #paginator
+                        [length]="
+                            interestCalculationDataSource.filteredData?.length
+                        "
+                        [pageIndex]="0"
+                        [pageSize]="10"
+                        [pageSizeOptions]="[5, 10, 25, 100]"
+                    >
+                    </mat-paginator>
+                </form>
+            </div>
+
+            <!-- / CONTENT -->
+        </div>
+
+        <!-- / CONTENT CARD -->
+    </div>
+    <!-- / CENTER -->
+</div>
